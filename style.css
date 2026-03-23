@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+body
+{
+    overflow-x: hidden;
+}
 .navLogoSec
 {
     width: 1250px;
@@ -12,6 +16,7 @@
     justify-content: center;
     border: 1px solid red;
     margin: 0 auto;
+    padding: 20px 0;
 }
 .navLogoSec img
 {
@@ -38,10 +43,90 @@
 {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 .navlink
 {
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 16px;
+    color: white;
+}
+.cart-wrapper{
+    position: relative;
+    display: inline-block;
+    list-style: none;
+}
+
+.navCart{
+    color: white;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.cart-count{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 18px;
+    height: 18px;
+    background: white;
+    color: black;
+    font-size: 11px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 1px;
+}
+.hamburger
+{
+    visibility: hidden;
+}
+.hamburger i
+{
+    font-size: 25px;
+    color: white;
+}
+
+@media (max-width:740px) {
+    .navLogoSec
+    {
+        display: none;
+    }
+    .navbar
+    {
+        width: 100%;
+        position: relative;
+    }
+    .logo
+    {
+        width: 150px;       
+        visibility: visible;
+        z-index: 1;
+    }
+    .navlist
+    {
+        position: absolute;
+        flex-direction: column;
+        inset: 0;
+        background: #000;
+        width: 100%;
+        height: 99.7vh;
+        display: flex;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: all 0.5s ease;
+    }
+    .navlist.openHam
+    {
+        transform: translateX(0%);
+    }
+    .hamburger
+    {
+        visibility: visible;   
+        z-index: 1;
+        cursor: pointer;
+    }
 }

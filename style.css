@@ -6,7 +6,10 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-
+body
+{
+    overflow-x: hidden;
+}
 .navLogoSec
 {
     width: 1250px;
@@ -110,6 +113,7 @@
     background-attachment: fixed;
     padding-left: 100px;
     padding-top: 240px;
+    border: 1px solid white;
 }
 .slide-subtitle
 {
@@ -126,6 +130,30 @@
     font-weight: 500;
     letter-spacing: 2px;
     color: white;
+}
+.slide-para
+{
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    line-height: 25px;
+}
+.slide-btn
+{
+    width: 170px;
+    height: 50px;
+    border: 1.7px solid white;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.4s ease;
+    margin-top: 30px;
+}
+.slide-btn:hover
+{
+    background: white;
+    color: #0c6350;
 }
 
 
@@ -145,7 +173,7 @@
     .navbar
     {
         width: 100%;
-        position: fixed;
+        position: absolute;
         margin-left: 0px;
         top: 0px;
         background: none;
@@ -178,5 +206,15 @@
         visibility: visible;   
         z-index: 1;
         cursor: pointer;
+    }
+    .slider-cont
+    {
+        height: 100vh;
+        padding-top: 170px;
+        padding-left: 10px;
+    }
+    .slide-title
+    {
+        font-size: 60px;
     }
 }

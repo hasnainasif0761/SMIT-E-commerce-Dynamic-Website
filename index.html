@@ -3,55 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Cosmetics Store</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header> 
-    <!-- Navbar Section Start -->
-     <div class="navLogoSec">
-         <img src="./img/logo.png" alt="">   
-     </div>
-    <nav class="w-full">
-         <div  class="navbar">      
-             <div class="logo">
-                 <img src="./img/logo.png" alt="website Logo">
-        </div>
-        <ul class="navlist">
-            <li><a href="#" class="navlink">home</a></li>
-            <li><a href="#" class="navlink">Shop</a></li>
-            <li><a href="#" class="navlink">Testimonial</a></li>
-            <li><a href="#" class="navlink">About</a></li>
-            <li><a href="#" class="navlink">Contact</a></li>
-            <li class="cart-wrapper"><i class="ri-handbag-fill navCart"></i><span class="cart-count">0</span></li>
-        </ul>
-        <div class="hamburger"><i class="ri-menu-fill"></i></div>
-    </div>
-     </nav>
-     <section class="section">
-        <div class="slider-cont">
-            <div class="slider-inner-cont md:w-[60%] py-3 ">
-                <p class="slide-subtitle">A WHOLE new look</p>
-                <h1 class="slide-title">Beauty pronounced</h1>
-                <p class="slide-para">We craft skincare and cosmetics that highlight your natural glow, bringing confidence to every expression. Subtle, refined, and effortlessly radiant—this is beauty, pronounced.</p>
-                <button class="slide-btn">VIEW MORE</button>
+    <header>
+        <div class="navLogo">
+            <img src="./img/logo.png" alt="">
+            <div id="hamburger">
+                <i class="ri-menu-line md:hidden text-3xl text-white"></i>
             </div>
         </div>
-     </section>
-     </header>
-     <section class="w-full h-[620px]">
-        <div class="w-full md:w-[1250px] border h-auto mx-auto mt-2">
-            <div class="w-[full] h-[100px] border border-red-300 flex items-center justify-center  flex-col mt-  py-20">
-                <p class="text-[#269FBD] font-semibold uppercase">A Brush of perfection</p>
-                <h1 class="text-3xl font-[500] mt-3 mb-3 uppercase">add a flavor to being a girl</h1>
-                <p class="text-[16px] font-[400]  text-gray-400">Explore products that let you beauty stand out.</p>
-            </div>
-            
-        </div>
-     </section>
-     <script src="script.js"></script>
-    </body>
+        <nav class="navbar">
+            <ul class="navList">
+                <li><a href="#" class="link">HOME</a></li>
+                <li><a href="#" class="link">SHOP</a></li>
+                <li><a href="#" class="link">TESTIMONIAL</a></li>
+                <li><a href="#" class="link">ABOUT</a></li>
+                <li><a href="#" class="link">COntact</a></li>
+                <li class="link">
+                    <i class="ri-shopping-bag-fill bag-icon"></i>
+                    <span>0</span>
+                </li>
+            </ul>
+            <div class="hamburger" style="display: none;"></div>
+        </nav>
+    </header>
+    <script src="script.js"></script>
+</body>
 </html>

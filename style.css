@@ -9,7 +9,7 @@
 }
 body
 {
-    background: gray;
+    /* background: gray; */
 }
 .navLogo
 {
@@ -93,6 +93,23 @@ body
     top: 230px;
     left: 90px;
 }
+
+/* ------------------ Website Content Section ------------------------ */
+.content-title
+{
+    width: 100%;
+    max-width: 1250px;
+
+}
+
+/* ----------------- Website Cards Section ------------------ */
+.bg:hover + .add-to-cart
+{
+ opacity: 1;
+}
+
+
+
 
 
 

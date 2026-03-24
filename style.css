@@ -13,7 +13,6 @@ body
 {
     width: 100%;
     max-width: 1250px;
-    border: 1px solid red;
     height: 100px;
     margin: 0 auto;
     display: flex;
@@ -29,11 +28,11 @@ body
     width: 100%;
     max-width: 1250px;
     padding: 20px 20px;
-    border: 1px solid red;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
 }
 .navList
 {
@@ -68,6 +67,27 @@ body
     top: 0;
     right: -20px;
 }
+
+/* ----------------- Website Banner Section ------------------- */
+.banner-container
+{
+    width: 100%;
+    height: 700px;
+    background-image: url('./img/banner-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    top: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+
+
+
+
+
 
 @media (max-width:767px) {
     .navLogo
@@ -104,5 +124,9 @@ body
     .navList.openHam
     {
         transform: translateX(0%);
+    }
+    .banner-container
+    {
+        z-index: -2;
     }
 }

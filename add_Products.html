@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-[93%] h-20  mx-auto mt-2 flex items-end pl-2 text-2xl font-semibold">
+        <h2>Add Projects</h2>
+    </div>
+    <div class="w-[93%]   mx-auto mt-2">
+        <form id="projectForm" class="flex flex-col px-3 py-3">
+            <label class="">Project Title :</label>
+            <input type="text" id="title"
+                class="mb-10 px-3 py-3 w-[90%] border-none outline-none mt-2 rounded-[10px] focus:ring-2 ring-gray-500"
+                placeholder="Enter your project title" required>
+            <label>Project Description :</label>
+            <input type="text"
+                class="mb-10 px-3 py-3 w-[90%] mt-2 rounded-[10px] border-none outline-none focus:ring-2 ring-gray-500"
+                id="description" placeholder="Enter your project Description" required>
+            <label>Project Live Url</label>
+            <input type="text"
+                class="mb-10 px-3 py-3 w-[90%] mt-2 rounded-[10px] border-none outline-none focus:ring-2 ring-gray-500"
+                id="liveUrl" placeholder="Enter your Live Url" required>
+            <label>Project Video Url</label>
+            <input type="text"
+                class="mb-10 px-3 py-3 w-[90%] mt-2 rounded-[10px] border-none outline-none focus:ring-2 ring-gray-500"
+                id="videoUrl" placeholder="Enter your project video" required>
+            <button type="submit"
+                class="border-none outline-none w-[90%] py-3 bg-gray-400/70 hover:bg-gray-400/90 text-white active:scale-95 rounded-[10px] focus:ring-2 ring-gray-500">Add
+                Course</button>
+        </form>
+    </div>
+    <script src="./js/firebaseStore.js" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

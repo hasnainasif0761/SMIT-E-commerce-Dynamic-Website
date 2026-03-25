@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body
+    class="bg-gradient-to-t from-pink-500 via-pink-600 via-30% to-purple-500 flex items-center h-screen justify-center">
+    <div class="md:w-[30%] h-[420px] border bg-white p-4 px-5 rounded-lg" id="main_div">
+        <h1 class="text-center text-3xl mt-2 font-[700] text-purple-700">Login Account</h1>
+        <form>
+            <div class="flex flex-col px-2">
+                <input type="email" id="lemail" placeholder="Email" required
+                    class="rounded-[5px] border px-4 py-3 text-xl outline-none focus:ring-2 ring-purple-500 mt-4">
+                    <div class="w-full  h-[60px] py-1 justify-between flex rounded-[5px] relative mt-4">               
+                    <input type="password" id="lpassword" placeholder="Password" required
+                    class="w-full rounded-[5px] border px-4 py-3 text-xl  outline-none focus:ring-2 ring-purple-500">
+                        <i class="fa-solid fa-eye absolute right-2 top-[25px] cursor-pointer" id="showpass"></i>
+                </div>
+                    <button type="submit" id="loginBtn"
+                    class="w-full border mt-4 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-lg font-semibold text-white active:scale-95">Login
+                    Now</button>
+        </form>
+    </div>
+    <div class="flex  justify-center items-center gap-2 mt-2 px-2">
+        <span class="w-1/2 h-[1px] bg-gray-400"></span>
+        <span>Or</span>
+        <span class="w-1/2 h-[1px] bg-gray-400"></span>
+    </div>
+    <button id="googleBtn"
+        class="w-full border mt-1 py-3 rounded-full bg-gray-400 text-lg font-semibold text-white active:scale-95">
+        Continue with Google</button>
+    <p class="text-center mt-4">Don't have an account?<a
+            class="text-red-500 font-semibold underline cursor-pointer hover:no-underline" href="./signup.html">Sign
+            In</a></p>
+    </div>
+    <script src="./js/login.js" type="module"></script>
+</body>
+
+</html>

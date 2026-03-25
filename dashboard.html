@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        ul li.active
+        {
+            background: white;
+            color: black;
+            cursor: pointer;
+        }
+        </style>
+</head>
+<body class="[font-family:'Poppins',sans-serif]">
+    <main class="flex">
+    <div id="sidebar" class="md:w-[250px] hidden md:block h-screen fixed bg-gray-400">
+        <div class="w-[250px] h-[100px] bg-gray-500 text-white flex justify-center items-center">
+            <h1 class="text-4xl font-bold">&lt;Huzaifa/&gt;</h1>
+        </div>
+        <ul class="w-[250px] h-[80vh]  flex flex-col py-6">
+            <li class="sideLink mt-3 font-semibold w-full  px-7 py-3 active" data-page="dashboard.html"><a href="#">Dashboard</a></li>
+            <li class="sideLink mt-3 font-semibold w-full  px-7 py-3 hover:bg-white transition duration-400  cursor-pointer" data-page="ViewProject.html"><a href="#">View Products</a></li>
+            <li class="sideLink mt-3 font-semibold w-full  px-7 py-3 hover:bg-white transition duration-400  cursor-pointer"><a href="./index.html" target="_blank">Visit this Portfolio</a></li>
+        </ul>
+    </div>
+    <div class="md:ml-[15rem] w-full h-auto border border-2">
+        <div class="w-[92%] h-[70px] border border-2 bg-gray-300 mx-auto m-3 rounded-lg flex justify-between items-center px-4 shadow-lg">
+                <i class="ri-menu-2-line text-2xl font-semibold cursor-pointer" id="ham"></i>
+                <div class="flex gap-5 items-center justify-center">
+                    <i class="ri-notification-2-line text-xl cursor-pointer"></i>
+                    <i class="ri-chat-4-line text-xl cursor-pointer"></i>
+                    <p class="text-xl">Admin</p>
+                    <button class="bg-red-500 cursor-pointer px-5 py-2 rounded-[10px] text-white" id="logout">Logout</button>
+                </div>
+        </div>
+        <div class="w-[92%] h-[120vh] mb-10 border border border-2 bg-gray-300 mx-auto rounded-lg">
+            <iframe id="inner-content" src="./dashboard_first.html" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+    </main>
+    <script src="./js/app.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>

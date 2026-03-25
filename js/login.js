@@ -68,7 +68,8 @@ function googleFunc(){
       name: user.displayName,
       photo: user.photoURL
     }));
-    window.location.href = './dashboard.html'
+    window.location.href = 'dashboard.html'
+    sessionStorage.setItem('login_admin',user.email);
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;

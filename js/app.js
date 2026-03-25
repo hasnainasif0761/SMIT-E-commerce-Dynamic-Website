@@ -13,22 +13,36 @@ logout.addEventListener('click',()=>{
     window.location.href = 'login.html'
 })
 
+let user =  JSON.parse(sessionStorage.getItem('users'));
+let namedashboard =  document.querySelector('.id');
+if(user.name)
+{
+    namedashboard.textContent = user.name;
+}else
+{
+    namedashboard.textContent = "Employee"
+}
+
+let canClick = true;
 
 links.forEach((li)=>{
     li.addEventListener('click',()=>{
-    
-        links.forEach((item)=>{
-            item.classList.remove('active')
-        })
-        
+        if(!canClick) return;
+        canClick = false;
+
+        setTimeout(()=>{ canClick = true; }, 300); // 300ms delay
+
+        links.forEach((item)=> item.classList.remove('active'));
         li.classList.add('active');
 
         const page = li.getAttribute('data-page');
+        if(iframeContent.src !== window.location.origin + '/' + page){
+            iframeContent.src = page;
+        }
+    });
+});
 
-        iframeContent.src = page
 
-    })
-})
 
 window.addEventListener("message",event=>{
     if(event.data === "projectAdded"){

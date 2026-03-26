@@ -117,6 +117,60 @@ body
     flex-wrap: wrap;
 
 }
+/* ------------------------ Sidebar Section --------------------------- */
+.sidebar
+{
+    right: -40%;
+    transition: all 0.5s ease;
+    /* right: 0; */
+}
+.sidebar.active
+{
+    right: -0%;
+}
+
+
+/* ------------------------------ Card Qunatity Section -------------------------------------------- */
+.card-qunatity
+{
+    display: flex;
+}
+#decrement
+{
+    width: 38px;
+    height: 25px;
+    background: rgba(174, 174, 174, 0.742);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.number
+{
+    padding: 0px 5px;
+    background: white;
+}
+#increment
+{
+    width: 38px;
+    height: 25px;
+    background: rgba(174, 174, 174, 0.742);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+
+
 
 
 

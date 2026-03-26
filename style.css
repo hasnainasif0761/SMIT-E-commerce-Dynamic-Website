@@ -148,6 +148,10 @@ body
     align-items: center;
     color: white;
 }
+#decrement:hover
+{
+    background: rgba(135, 135, 135, 0.742);
+}
 .number
 {
     padding: 0px 5px;
@@ -165,6 +169,10 @@ body
     justify-content: center;
     align-items: center;
     color: white;
+}
+#increment:hover
+{
+    background: rgba(135, 135, 135, 0.742);
 }
 
 

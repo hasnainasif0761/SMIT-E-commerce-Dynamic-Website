@@ -63,8 +63,7 @@ const addtocartFunc = (productBox) =>{
     }
 
     const cardBox = document.createElement('div');
-    cardBox.classList.add('cart-box');
-    cardBox.className = `w-[90%] h-[120px] flex items-center bg-white shadow-lg border mx-auto py-2 pb-3 rounded-lg`;
+    cardBox.className = `cart-box w-[90%] h-[120px] flex items-center bg-white shadow-lg border mx-auto py-2 pb-3 rounded-lg`;
     cardBox.innerHTML = `
         <img src="${productImgSrc}" class="w-[16%] rounded-lg ml-3 shadow-lg">
         <div class="w-[70%] ml-2 h-[80px] mt-3 flex">
@@ -84,11 +83,44 @@ const addtocartFunc = (productBox) =>{
     `
     cartContent.appendChild(cardBox);
     updateTotalPrice()
-    cardBox.querySelector('.remove-cart').addEventListener('click',(e)=>{
+    Toastify({
+        text: "Product Add Successfully 🎉",
+        duration: 3000,
+        gravity:'bottom',
+        position: 'right',
+        style: {
+            background: 'green'
+        }
+    }).showToast()
+    cardBox.querySelector('.remove-cart').addEventListener('click', (e) => {
         e.stopPropagation();
-        cardBox.remove();
-        updateTotalPrice()
-    })
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you really want to delete this item?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#e3342f",
+            cancelButtonColor: "#6c757d",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+                cardBox.remove();
+                updateCartCount(-1);
+                updateTotalPrice();
+
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Item removed successfully",
+                    icon: "success",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            }
+
+        });
+    });
 
     cardBox.querySelector('.card-qunatity').addEventListener('click',(e)=>{
         e.stopPropagation();
@@ -108,14 +140,35 @@ const addtocartFunc = (productBox) =>{
         quantityNumber.textContent = quantity
         updateTotalPrice();
     })
+    updateCartCount(1)
 }
 
 function updateTotalPrice(){
     const totalPrice = document.querySelector('.total-price');
     const cartbox = document.querySelectorAll('.cart-box');
-    console.log(totalPrice);
+    let total = 0.00;
+    cartbox.forEach((cartBox)=>{
+        const cartPrice = cartBox.querySelector('.cart-price')
+        const price = parseFloat(cartPrice.textContent.replace('£',''));
+        const quantityElement = cartBox.querySelector('.number');
+        const quantity = parseFloat(quantityElement ? quantityElement.textContent : "1") || 1;
+
+        total += price * quantity
+    })
+    totalPrice.textContent = `£ ${total}`
 }
 
+let currentItemCount = 0;
+const updateCartCount = (change) =>{
+    const cartItemCountBedge = document.querySelector('.cart-item');
+    currentItemCount += change
+    if(currentItemCount > 0){
+        cartItemCountBedge.textContent = currentItemCount
+    }else
+    {
+        cartItemCountBedge.textContent = '0';
+    }
+}
 
 
 

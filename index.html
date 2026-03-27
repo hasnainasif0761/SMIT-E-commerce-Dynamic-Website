@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#F7F7F7]">
+<body class="bg-[#F7F7F7]" style="scroll-behavior: smooth;">
     <div class="sidebar w-[40%] h-screen bg-gray-500 fixed" style="z-index: 100;">
         <div class="w-full h-[70px] border-b-2 flex justify-between px-5 items-center">
             <img src="./img/logo.png" class="w-[35%]">
@@ -54,10 +54,10 @@
         <nav class="navbar">
             <ul class="navList">
                 <li><a href="#" class="link">HOME</a></li>
-                <li><a href="#" class="link">SHOP</a></li>
-                <li><a href="#" class="link">TESTIMONIAL</a></li>
-                <li><a href="#" class="link">ABOUT</a></li>
-                <li><a href="#" class="link">Contact</a></li>
+                <li><a href="#shop" class="link">SHOP</a></li>
+                <li><a href="#test" class="link">TESTIMONIAL</a></li>
+                <li><a href="#about" class="link">ABOUT</a></li>
+                <li><a href="#contact" class="link">Contact</a></li>
                 <li><a href="./login.html" class="link hover:bg-[#269fb7] border-2 hover:border-[#269fb7] transtion-all duration-500 px-3 py-2">LOGIN</a></li>
                 <li class="link">
                     <i class="ri-shopping-bag-fill bag-icon cursor-pointer"></i>
@@ -76,7 +76,7 @@
         </div>
         <!-- <section class="w-full h-[400px] border"></section> -->
     </header>
-    <section class="max-w-[1250px] w-full h-auto border md:mt-[530px] mt-[570px] mx-auto">
+    <section id="shop" class="max-w-[1250px] w-full h-auto border md:mt-[530px] mt-[570px] mx-auto">
          <div class="w-full h-[140px] mt-7 md:mt-20 border text-center pt-2">
             <p class="uppercase font-semibold text-[#339FB7] text-[17px]">A BRUSH of perfection</p>
             <h1 class="uppercase md:text-3xl mt-3" style="font-weight: 500;">Add a flavour to being a girl</h1>
@@ -158,7 +158,7 @@
             </div>
          </div>   
     </section>
-    <section class="max-w-[1250px] w-full  h-auto mx-auto border mb-20 mt-[100px]">
+    <section id="about" class="max-w-[1250px] w-full  h-auto mx-auto border mb-20 mt-[100px]">
         <div class="banner-2-Cont">
             <div class="banner-2-img md:w-1/2 w-full h-full border overflow-hidden">
                 <img src="./img/banner-2-copy.png" class=" scale-[1.2] h-full object-cover">

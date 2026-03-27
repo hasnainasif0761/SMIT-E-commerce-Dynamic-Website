@@ -29,11 +29,27 @@ function signFunc(event){
   event.preventDefault();
   let semail = document.getElementById("semail").value;
   let spassword = document.getElementById("spassword").value;
+  if(spassword.length > 6){
   createUserWithEmailAndPassword(auth,semail,spassword)
   .then((userCredential)=>{
     const user = userCredential.user;
     console.log(user);
-    alert("User Created Successfully");
+        Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    }).fire({
+      icon: "success",
+      title: "Signed Up successfully"
+    }).then(()=>{
+      window.location.href = './login.html';
+    })
     document.getElementById('semail').value = ''
     document.getElementById('spassword').value = ''
   })
@@ -44,6 +60,25 @@ function signFunc(event){
     document.getElementById('semail').value = ''
     document.getElementById('spassword').value = ''
   })
+}else
+{
+Swal.fire({
+  icon: "error",
+  title: "Invalid Password",
+  text: "Your password must be at least 6 characters long.",
+  confirmButtonText: "Try Again",
+  confirmButtonColor: "#e74c3c",
+  background: "#0f172a",
+  color: "#fff",
+  backdrop: `rgba(0,0,0,0.7)`,
+  showClass: {
+    popup: "animate__animated animate__fadeInDown"
+  },
+  hideClass: {
+    popup: "animate__animated animate__fadeOutUp"
+  }
+});
+}
 }
 
 

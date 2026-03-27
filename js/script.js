@@ -170,7 +170,21 @@ const updateCartCount = (change) =>{
     }
 }
 
-
+let buyNow = document.getElementById('buyNow');
+buyNow.addEventListener('click',()=>{
+    const cartBox = cartContent.querySelectorAll('.cart-box');
+    if(cartBox.length === 0){
+         alert('Your Cart is Empty. Please Add item to your cart and after buying');
+         return   
+    }
+    cartBox.forEach(carrox=>carrox.remove());
+    cartItem = 0;
+    updateTotalPrice()
+    updateCartCount(0);
+    alert('Thank you for your Purchase !')
+    updateCartCount(0);
+    document.querySelector('.cart-item').textContent = 0;
+})
 
 
 

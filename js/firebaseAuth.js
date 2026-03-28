@@ -16,7 +16,7 @@ import {
     addDoc
  } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
 
-import { getDatabase, ref, set , onValue } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js"
+import { getDatabase, ref, set , remove , onValue } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyCMWO93aaT0HaD21uqQ-RM4hRDc3VA6mmc",
@@ -46,5 +46,6 @@ export {
     getDatabase,
     ref,
     set,
-    onValue
+    onValue,
+    remove
 }

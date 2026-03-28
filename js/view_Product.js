@@ -3,7 +3,8 @@ import {
     initializeApp,
     firebaseConfig,
     ref,
-    onValue
+    onValue,
+    remove
 } from './firebaseAuth.js'
 
 const app = initializeApp(firebaseConfig);
@@ -19,9 +20,9 @@ onValue(productRef, (snapshot) => {
 
     snapshot.forEach((childSnapshot) => {
         const data = childSnapshot.val();
-
+        const key = childSnapshot.key;
         container.innerHTML += `
-            <div class="bg-white shadow-lg rounded-xl p-3 hover:scale-105 transition flex flex-col">
+            <div class="bg-white shadow-lg rounded-xl p-3 hover:scale-105 transition flex flex-col" data-id="${key}">
                 <img src="${data.productImage}" 
                      class="productImg w-full h-40 object-cover rounded-lg">
 
@@ -38,7 +39,7 @@ onValue(productRef, (snapshot) => {
                 </p>
                 <div class="w-full flex justify-between mt-auto pt-2">
                     <button class="editBtn w-[40%] active:scale-95 rounded-[5px] bg-green-500 text-white py-2 px-2 border text-[13px]">Edit Product</button>
-                    <button class="deletBtn w-[55%] active:scale-95 rounded-[5px] bg-red-500 text-white py-2  border text-[13px]">Delete Product</button>
+                    <button class="deleteBtn w-[55%] active:scale-95 rounded-[5px] bg-red-500 text-white py-2  border text-[13px]">Delete Product</button>
                 </div>
             </div>
         `;
@@ -57,7 +58,7 @@ onValue(productRef, (snapshot) => {
     })
     container.addEventListener('click',(e)=>{
         if(e.target.classList.contains('deleteBtn')){
-            deleteFunc(e.target.closest('.bg-white'))
+            deleteFunc()
         }
     })
 });
@@ -103,7 +104,13 @@ function editBtnFunc(cont){
 
 // --------------------- I am Created Delete Function Code -------------------------------- //
 
-
+function deleteFunc(){
+    let id = deleteId;
+    if(confirm('Are you Sure You Want to delete this Product')){
+        remove(ref(db,'Product'+id))
+        return
+    }
+}
 
 
 
